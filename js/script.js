@@ -17,18 +17,22 @@ const skillPanel = document.getElementById('skill-view');
 const closeSkill = document.querySelector('.fa-xmark');
 
 skill.addEventListener('click', function() {
-
       skillPanel.classList.add('active');
       skillPanel.style.display = 'block';
       setTimeout(() => {
         skillPanel.classList.remove('active');
+        navbar.style.display = 'none'
+        borderBottom.style.border = '0px'
+        socialIcon.style.display = 'none'
       }, 0);
     });
 
 
 closeSkill.addEventListener('click', () => {
-  skillPanel.classList.add('active');
-  
+   skillPanel.classList.add('active');
+   borderBottom.style.borderBottom = '1px solid rgb(39, 37, 37)';
+   socialIcon.style.display = 'block'
+   navbar.style.display = 'block'
   setTimeout(() => {
     skillPanel.style.display = 'none';
   }, 1000);
@@ -136,7 +140,6 @@ const projectContainer = document.querySelector('.project-section');
 
 projectClose.addEventListener('click', () => {
    projectContainer.classList.add('project-view')
-
    leftSide.style.translate = '-300px 0px'
    leftSide.classList.add('project-view');
 
@@ -280,11 +283,21 @@ const menuTab = document.getElementById('menu-tab');
 const menuTabClose = document.getElementById('menu-tab-close');
 
 menuTab.addEventListener('click', () => {
+  navbar.style.display = 'block'
+  setTimeout(() => {
   navbar.style.right = '0px'
   navbar.style.backgroundColor = '#06020d'
+  },0)
+
 });
 
 menuTabClose.addEventListener('click', () => {
-  navbar.style.right = '-200px'
+   navbar.style.right = '-200px'
   navbar.style.backgroundColor = 'transparent'
+  setTimeout(() => {
+   navbar.style.display = 'none'
+  },600)
 });
+
+
+const socialIcon = document.querySelector('.hero-social')

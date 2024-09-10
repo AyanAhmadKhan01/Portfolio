@@ -254,6 +254,7 @@ body::-webkit-scrollbar {
   transition: 1s;
   z-index: 5;
   border: 1px solid gray;
+  display: none;
 }
 
  #menu-tab,
@@ -367,8 +368,9 @@ body::-webkit-scrollbar {
   filter: drop-shadow(0px 0px 1px #6125d0);
 }
 
+
 .skill-panel .fa-xmark {
-  position: absolute;
+  float: right;
   color: var(--text_color);
   font-size: clamp(14px, 5vw, 26px);
   margin: 10px 3px 0px 20px;
@@ -378,6 +380,7 @@ body::-webkit-scrollbar {
   right: 10px;
   transition: 0.5s;
   cursor: pointer;
+  margin-right: 20px;
 }
 
 .skill-panel .fa-xmark:hover {
@@ -900,8 +903,11 @@ transition: .3s;
 }
 
 @media (max-width: 1087px) {
-  .skill-panel {
-    margin-top: -75px;
+  .skill-panel { 
+    position: fixed;
+    top: 70px;
+    overflow-y: auto;
+    height: 100vh;
   }
 }
 
@@ -925,14 +931,12 @@ transition: .3s;
   }
   .project-section {
     height: 120vh;
+    top: 0px;
   }
 }
 
-@media(max-width: 860px) {
-  .skill-panel {
-    margin-top: -50px;
-  }
-}
+
+
 
 @media (max-width: 768px) {
   .hero-social {
@@ -952,9 +956,7 @@ transition: .3s;
   #right-skill img {
     width: 100%;
   } 
-  .skill-panel {
-    margin-top: -20px;
-  }    
+   
 }
 
 
@@ -965,9 +967,7 @@ transition: .3s;
   .hero-btn {
     flex-direction: column;
   }
-  .skill-panel {
-    margin-top: 0px;
-  }
+ 
   #right-skill img {
     display: none;
   }
@@ -977,10 +977,6 @@ transition: .3s;
   .hero-section {
     margin-top: 60px;
   }
-  .skill-panel {
-    margin-top: 20px;
-  }
- 
 }
 
 .resume {
